@@ -1,0 +1,54 @@
+en:
+  enumerize:
+    guarantee:
+      bank_name:
+        ESTADO: "Banco Estado"
+        SANTANDER: "Banco Santander"
+        BBVA: "Banco BBVA"
+        CORPBANCA: "Banco Corpbanca"
+        FALABELLA: "Banco Falabella"
+        RIPLEY: "Banco Ripley"
+        CHILE: "Banco de Chile"
+        BICE: "Banco BICE"
+        SCOTIABANK: "Banco Scotiabank"
+        EDWARDS: "Banco Edwards"
+        INTERNACIONAL: "Banco Internacional"
+        ITAU: "Banco ITAU"
+        SECURITY: "Banco Security"
+        PROAVAL: "Banco Proaval"
+        MASAVAL: "Banco Masaval"
+        BCI: "Banco Credito e Inversiones"
+        CREDITO_E_INVERSIONES: "Banco Credito e Inversiones"
+        HDI: "Banco HDI"
+        CONSORCIO: "Banco Consorcio"
+        FIRST_AVAL: "Banco First Aval"
+        -: "Sin banco"
+      guarantee_type:
+        GARANTIA: "Boleta de garantia"
+        VALE_VISTA: "Vale vista"
+        LETRA_CAMBIO: "Letra de cambio"
+        CERTIFICADO_PRORROGA: "Certificado de prorroga"
+        CERTIFICADO_FIANZA: "Certificado de fianza"
+        POLIZA_GARANTIA: "Poliza de garantia"
+        PAGARE: "Pagare"
+        CERTIFICADO: "Certificado"
+      state:
+        DEVUELTA: "Devuelta"
+        VENCIDA: "Vencida"
+        VIGENTE: "Vigente"
+        -: "Sin selección"
+      currency_guarantee:
+        UF: "UF"
+        CLP: "CLP"
+        EUR: "EUR"
+        US: "USD"
+        -: "Sin moneda"
+      devolution_return:
+        RETIRO: "Retiro personal"
+        RETIRO_CORRESPONDENCIA: "Despacho correspondencia"
+        -: "Sin selección"
+  helpers:
+    submit:
+      guarantee:
+        create: "Crear boleta de garantia"
+        update: "Actualizar boleta de garantia"

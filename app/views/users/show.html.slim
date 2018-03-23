@@ -1,0 +1,77 @@
+h2
+  Perfil de #{full_name}
+.ui.divider
+.ui.grid
+  .row
+    .four.wide.column
+      .ui.special.cards
+        .card
+          .blurring.dimmable.image
+            .ui.dimmer
+              .content
+                .center
+                  = link_to 'Editar perfil', edit_user_registration_path, class: 'ui inverted button'
+            - if @user.avatar?
+              = image_tag @user.avatar.url(:thumb)
+          .content
+            a.header
+              = full_name
+            .meta
+              span.date Se unio el
+              = @user.created_at.year
+            .description
+              p= @user.about
+          .extra.content
+            p
+              i.mail.icon
+              = @user.email
+            p
+              i.user.icon
+              = @user.roles.first.name
+    .twelve.wide.column
+      .ui.segment
+        h4.header Ultimos movimientos
+        .ui.divider
+        p Ultimas garantias ingresadas
+      table.ui.celled.table
+        thead
+          tr
+            th N° Correlativo
+            th Numero de ingreso
+            th Detalle
+            th Agregado por
+            - if can? :update, @guarantee
+              th
+        tbody
+          - @guarantees.limit(5).each do |guarantee|
+            tr
+              td= guarantee.correlative
+              td= guarantee.income_number
+              td= capitalize_detail(guarantee.detail)
+              td= guarantee.user.first_name + ' ' + guarantee.user.last_name
+              - if can? :update, guarantee
+                td= link_to 'Ver', edit_guarantee_path(guarantee), class: 'ui mini teal button'
+
+.ui.divider
+h3 Ultimas modificaciones
+.ui.grid
+  .four.wide.column
+    .ui.raised.segment
+      h4.ui.header Proyecto 1
+      .ui.divider
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium nulla doloremque in ipsam sint, eos distinctio. Harum vel nemo quod, optio explicabo architecto. Veniam quisquam repudiandae laborum dolorum corporis deleniti.
+  .four.wide.column
+    .ui.raised.segment
+      h4.ui.header Proyecto 2
+      .ui.divider
+      p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, natus molestiae cupiditate, incidunt exercitationem earum officiis consequuntur eligendi sapiente repudiandae voluptates officia, voluptas dolores? Quam quaerat quia iusto iure consectetur.
+  .four.wide.column
+    .ui.raised.segment
+      h4.ui.header Proyecto 3
+      .ui.divider
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium nulla doloremque in ipsam sint, eos distinctio. Harum vel nemo quod, optio explicabo architecto. Veniam quisquam repudiandae laborum dolorum corporis deleniti.
+  .four.wide.column
+    .ui.raised.segment
+      h4.ui.header Proyecto 4
+      .ui.divider
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam tempora maiores voluptas provident blanditiis soluta dolores, nobis ipsum velit, neque necessitatibus eum itaque vitae saepe perspiciatis. Ducimus repudiandae harum reiciendis.
